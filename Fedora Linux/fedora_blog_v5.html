@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SISTEMAS OPERATIVOS PARA PC y PARA MÓVILES — Fedora Linux: Distribución Innovadora de Software Libre</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#06131a;
+    --card: rgba(255,255,255,0.03);
+    --accent:#2ee0b1;
+    --muted:#9bb0b6;
+    --text:#e7f3f2;
+    --pad:26px;
+    --maxw:1200px;
+    --section-gap:34px;
+    --content-width:1000px;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background: linear-gradient(180deg,#041018 0%, #06131a 80%);
+    color:var(--text);
+    padding:20px;
+    display:flex;
+    justify-content:center;
+  }
+  .page{
+    width:100%;
+    max-width:var(--maxw);
+    background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+    border-radius:14px;
+    box-shadow:0 14px 60px rgba(0,0,0,0.6);
+    overflow:hidden;
+  }
+  header{
+    padding:30px var(--pad);
+    text-align:center;
+    background: linear-gradient(90deg, rgba(46,224,177,0.06), rgba(255,255,255,0.00));
+    border-bottom:1px solid rgba(255,255,255,0.03);
+  }
+  header h1{ margin:0; color:var(--accent); font-size:2rem; letter-spacing:0.6px; }
+  header h2{ margin:8px 0 0; color:var(--text); font-weight:400; font-size:1rem; }
+  header p.subtitle{ margin:8px 0 0; color:var(--muted); font-size:0.95rem; }
+
+  nav.index-list{
+    max-width:var(--content-width);
+    margin:18px auto;
+    padding:12px 18px;
+    background:rgba(255,255,255,0.02);
+    border-radius:10px;
+    display:block;
+  }
+  nav.index-list h3{ margin:0 0 8px 0; color:var(--accent); }
+  nav.index-list ul{ list-style:none ; padding-left:0; margin:0; color:var(--text); }
+  nav.index-list li{ margin:8px 0; }
+  nav.index-list a{ color:var(--text); text-decoration:none; font-weight:600; }
+  nav.index-list a:hover{ text-decoration:underline; color:var(--accent); }
+
+  main.content{ padding:28px var(--pad); display:flex; justify-content:center; }
+  .content-wrap{ width:100%; max-width:var(--content-width); }
+
+  section.card{
+    background:var(--card);
+    padding:26px;
+    border-radius:12px;
+    margin-bottom:var(--section-gap);
+    box-shadow:0 8px 30px rgba(0,0,0,0.35);
+  }
+  .section-title{ margin-bottom:8px; display:flex; align-items:center; gap:10px; }
+  .section-title h2{ margin:0; color:var(--accent); font-size:1.18rem; }
+  .lead{ color:var(--muted); margin-bottom:12px; }
+  h3{ color:#ffffff; margin:12px 0 8px; }
+  p{ color:var(--text); line-height:1.7; margin:0 0 12px 0; }
+  ul{ margin:8px 0 12px 20px; }
+  li{ margin:6px 0; }
+  table{ width:100%; border-collapse:collapse; margin:12px 0; border-radius:8px; overflow:hidden; }
+  thead th{ text-align:left; padding:10px; background:rgba(255,255,255,0.03); color:var(--accent); }
+  tbody td{ padding:10px; border-top:1px solid rgba(255,255,255,0.02); color:var(--text); background:rgba(255,255,255,0.01); }
+
+  figure{ margin:18px 0; text-align:center; }
+  figure img{ width:100%; max-width:720px; height:auto; border-radius:8px; box-shadow:0 8px 26px rgba(0,0,0,0.45); }
+  figcaption{ color:var(--muted); font-size:0.9rem; margin-top:8px; }
+
+  .video{ position:relative; padding-bottom:56.25%; height:0; overflow:hidden; border-radius:8px; margin:12px 0; max-width:720px; }
+  .video iframe{ position:absolute; top:0; left:0; width:100%; height:100%; border:0; }
+
+  .links a{ color:var(--accent); text-decoration:none; font-weight:600; }
+  .links a:hover{ text-decoration:underline; }
+
+  .info-block{ background:rgba(255,255,255,0.02); padding:20px; border-radius:8px; margin-top:18px; display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+  .institution-text{ text-align:left; }
+  .institution-text h3{ margin:0; color:var(--text); font-size:1.05rem; letter-spacing:0.8px; font-weight:700; font-family: 'Poppins', sans-serif; }
+  .institution-text p{ margin:6px 0 0 0; color:var(--muted); font-size:0.95rem; font-family: 'Poppins', sans-serif; }
+  .logos{ display:flex; gap:18px; align-items:center; margin-top:6px; }
+  .logos img{ max-height:96px; width:auto; border-radius:6px; box-shadow:0 6px 18px rgba(0,0,0,0.4); }
+
+  footer{ padding:18px var(--pad); background:rgba(0,0,0,0.02); color:var(--muted); font-size:0.95rem; border-top:1px solid rgba(255,255,255,0.03); margin-top:24px; text-align:center; }
+
+  @media (max-width:780px){
+    figure img, .video{ max-width:100%; }
+    .logos img{ max-height:72px; }
+    .info-block{ flex-direction:column; align-items:flex-start; }
+  }
+
+</style>
+</head>
+<body>
+  <div class="page" role="document">
+    <header>
+      <h1>SISTEMAS OPERATIVOS PARA PC y PARA MÓVILES</h1>
+      <h2>Fedora Linux: Distribución Innovadora de Software Libre</h2>
+      <p class="subtitle">Presentación para la asignatura Sistemas Operativos — Grupo 1IL-142 (Universidad Tecnológica de Panamá)</p>
+    </header>
+
+    <nav class="index-list" aria-label="Índice del blog">
+      <h3>Índice</h3>
+      <ul>
+        <li><a href="#titulo">1. Título</a></li>
+        <li><a href="#introduccion">2. Introducción</a></li>
+        <li><a href="#historia">3. Breve reseña histórica</a></li>
+        <li><a href="#detalle">4. Detalle del sistema operativo</a></li>
+        <li><a href="#imagenes">4.1 Imágenes de Referencia</a></li>
+        <li><a href="#requerimientos">4.2 Requerimientos del sistema</a></li>
+        <li><a href="#comparativo">4.3 Cuadro comparativo</a></li>
+        <li><a href="#videos">4.4 Videos ilustrativos</a></li>
+        <li><a href="#hipervinculos">4.5 Hipervínculos relacionados</a></li>
+        <li><a href="#arquitectura">5. Arquitecturas y componentes de Linux Fedora</a></li>
+        <li><a href="#ventajas-arquitectura">5.1 Ventajas de la arquitectura Fedora</a></li>
+        <li><a href="#caracteristicas">6. Características de Fedora Linux</a></li>
+        <li><a href="#ventajas-desventajas">7. Ventajas y Desventajas de Utilizar Fedora Linux</a></li>
+        <li><a href="#conclusion">8. Conclusiones</a></li>
+        <li><a href="#referencias">9. Referencias (APA)</a></li>
+        <li><a href="#integrantes">10. Integrantes y datos institucionales</a></li>
+      </ul>
+    </nav>
+
+    <main class="content" role="main">
+      <div class="content-wrap">
+
+        <section id="titulo" class="card" aria-labelledby="titulo">
+          <div class="section-title"><h2>1. Título</h2></div>
+          <p><strong>SISTEMAS OPERATIVOS PARA PC y PARA MÓVILES — Fedora Linux: Distribución Innovadora de Software Libre</strong></p>
+          <p>Presentación para la asignatura Sistemas Operativos — Grupo 1IL-142 (Universidad Tecnológica de Panamá)</p>
+        </section>
+
+        <section id="introduccion" class="card" aria-labelledby="introduccion">
+          <div class="section-title"><h2>2. Introducción</h2></div>
+          <p>Fedora Linux es una distribución GNU/Linux de propósito general, mantenida por una comunidad internacional de ingenieros, diseñadores y usuarios, con el patrocinio de Red Hat. Desde su creación en 2003, Fedora se ha consolidado como una plataforma innovadora que impulsa el software libre y de código abierto, con un enfoque en la adopción temprana de tecnologías emergentes. Fedora es conocida por su estabilidad y por estar a la vanguardia en la implementación de características avanzadas, lo que la hace un referente tecnológico en el ecosistema Linux.</p>
+          <p>Su relación con Red Hat Enterprise Linux (RHEL) es clave: Fedora actúa como un banco de pruebas para las tecnologías que luego se integran en RHEL, lo que garantiza un flujo constante de innovación desde la comunidad hacia el ámbito empresarial. Esto hace de Fedora una distribución ideal para desarrolladores, administradores de sistemas y entusiastas que desean experimentar con las últimas tecnologías en un entorno estable y seguro.</p>
+          <p>Fedora se destaca por su enfoque en la innovación, el rendimiento y la seguridad, ofreciendo actualizaciones frecuentes, un entorno de desarrollo robusto y herramientas avanzadas para la gestión de contenedores y virtualización. Su adopción temprana de tecnologías como Systemd, Wayland, GNOME Shell y Flatpak la posiciona como una distribución líder en el mundo Linux, con una comunidad activa que brinda soporte y documentación extensa.</p>
+          <ul class="links">
+            <li><a href="https://getfedora.org" target="_blank" rel="noopener">Get Fedora — Página de descargas</a></li>
+            <li><a href="https://docs.fedoraproject.org/es-ES/" target="_blank" rel="noopener">Documentación oficial (ES)</a></li>
+            <li><a href="https://fedoramagazine.org" target="_blank" rel="noopener">Fedora Magazine — Artículos y tutoriales</a></li>
+          </ul>
+        </section>
+
+        <section id="historia" class="card" aria-labelledby="historia">
+          <div class="section-title"><h2>3. Breve reseña histórica</h2></div>
+          <p>Fedora nació en 2003 cuando Red Hat decidió separar una versión comunitaria del producto comercial. El proyecto combinó contribuciones de la comunidad con recursos de Red Hat; su naturaleza comunitaria permitió iterar rápidamente sobre nuevas ideas y paquetes.</p>
+          <p>Durante su historia Fedora ha liderado o acelerado múltiples cambios técnicos en el ecosistema Linux. A continuación se describen eventos relevantes:</p>
+          <ul>
+            <li><strong>2003:</strong> Primer lanzamiento de Fedora Core como distribución comunitaria.</li>
+            <li><strong>2011-2013:</strong> Adopción temprana de systemd; impacto en la gestión de servicios.</li>
+            <li><strong>2015-2020:</strong> Consolidación del soporte de contenedores y herramientas como Podman.</li>
+            <li><strong>2018 en adelante:</strong> Desarrollo y promoción de Silverblue (modelo inmutable).</li>
+            <li><strong>2020-2025:</strong> Expansión hacia escenarios cloud, edge e IoT con lanzamientos semestrales.</li>
+          </ul>
+
+          <h3>Video histórico</h3>
+          <div class="video" aria-label="Video histórico incrustado">
+            <iframe src="https://www.youtube.com/embed/IzxZOJYJZhs" title="Video histórico de Fedora" allowfullscreen></iframe>
+          </div>
+          <p class="lead">Video histórico. <a href="https://youtu.be/IzxZOJYJZhs?si=xYQKSjKhFZH2QJ_-" target="_blank" rel="noopener">Ver en YouTube</a></p>
+
+          <ul class="links">
+            <li><a href="https://fedoraproject.org/wiki/History" target="_blank" rel="noopener">Historia del proyecto Fedora — Wiki oficial</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Fedora_Project" target="_blank" rel="noopener">Resumen en Wikipedia</a></li>
+          </ul>
+        </section>
+
+        <section id="detalle" class="card" aria-labelledby="detalle">
+          <div class="section-title"><h2>4. Detalle del sistema operativo</h2></div>
+          <p>Componentes, ediciones, herramientas y buenas prácticas ampliadas.</p>
+
+          <h3>Arquitectura y componentes</h3>
+          <p>Fedora distribuye paquetes en formato RPM y usa DNF como gestor de paquetes. Integra tecnologías de seguridad (SELinux), virtualización (QEMU/KVM, libvirt), y contenedores (Podman). Su kernel se actualiza frecuentemente y Fedora suele recibir cambios upstream antes que muchas otras distribuciones.</p>
+          <ul>
+            <li><strong>DNF</strong>: Gestor de paquetes avanzado.</li>
+            <li><strong>SELinux</strong>: Control de acceso obligatorio por defecto.</li>
+            <li><strong>Podman/Buildah</strong>: Gestión de contenedores sin demonio.</li>
+            <li><strong>Toolbx</strong>: Entornos de desarrollo reproducibles.</li>
+          </ul>
+
+          <h3 id="imagenes"></h3>
+          <figure>
+            <img src="https://fedoramagazine.org/wp-content/uploads/2022/03/fw36-1.png" alt="Fedora Workstation GNOME">
+            <figcaption>Figura No. 1. Interfaz de Fedora Workstation (GNOME). Fuente: Fedora Magazine (2022). Recuperado de https://fedoramagazine.org/wp-content/uploads/2022/03/fw36-1.png</figcaption>
+          </figure>
+
+          <figure>
+            <img src="https://cdn.osxdaily.com/wp-content/uploads/2023/12/fedora-asahi-linux-mac.jpg" alt="Fedora en Mac - Asahi">
+            <figcaption>Figura No. 2. Fedora ejecutándose en hardware Apple (Asahi Linux / Fedora). Fuente: OSXDaily (2023). Recuperado de https://cdn.osxdaily.com/wp-content/uploads/2023/12/fedora-asahi-linux-mac.jpg</figcaption>
+          </figure>
+
+          <h3 id="requerimientos">4.2 Requerimientos del sistema</h3>
+          <p>Guía extendida para dimensionar hardware según el uso previsto:</p>
+          <table aria-describedby="requerimientos">
+            <thead>
+              <tr><th>Componente</th><th>Requisito mínimo</th><th>Recomendado</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>CPU</td><td>x86_64 o ARM, 2 GHz</td><td>4+ núcleos modernos (Intel/AMD) o SoC ARM de alto rendimiento</td></tr>
+              <tr><td>RAM</td><td>2 GB</td><td>16 GB+ para desarrollo y entornos con VMs</td></tr>
+              <tr><td>Almacenamiento</td><td>20 GB</td><td>SSD NVMe 120 GB+ (mejor IOPS para contenedores y VM)</td></tr>
+              <tr><td>Gráfica</td><td>Soporte básico OpenGL/Wayland</td><td>GPU con drivers oficiales para cargas gráficas o multimedia</td></tr>
+            </tbody>
+          </table>
+
+          <h3 id="comparativo">4.3 Cuadro comparativo (Fedora vs Ubuntu vs Debian)</h3>
+          <table aria-describedby="comparativo">
+            <thead>
+              <tr><th>Aspecto</th><th>Fedora</th><th>Ubuntu</th><th>Debian</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Modelo de lanzamiento</td><td>~6 meses, versiones recientes</td><td>Regular + LTS (soporte extendido)</td><td>Lanzamientos espaciados; estabilidad máxima</td></tr>
+              <tr><td>Soporte</td><td>Comunidad y corta vida por versión</td><td>Soporte comercial (Canonical)</td><td>Comunidad; foco en estabilidad</td></tr>
+              <tr><td>Paquetes</td><td>DNF/RPM</td><td>APT/DEB</td><td>APT/DEB</td></tr>
+              <tr><td>Ventajas</td><td>Tecnologías recientes; integración Podman & Flatpak</td><td>Amplio ecosistema y facilidad de uso</td><td>Estabilidad y predictibilidad</td></tr>
+              <tr><td>Desventajas</td><td>Actualizaciones frecuentes; mantenimiento</td><td>Decisiones políticas en paquetes (ej. Snap)</td><td>Paquetes más antiguos</td></tr>
+            </tbody>
+          </table>
+
+          <h3 id="videos">4.4 Videos ilustrativos</h3>
+          <div class="video" aria-label="Video Fedora 40 - novedades">
+            <iframe src="https://www.youtube.com/embed/TEcLOOvHj1I" title="Fedora 40 novedades" allowfullscreen></iframe>
+          </div>
+          <p>Video No. 1. <a href="https://www.youtube.com/watch?v=TEcLOOvHj1I" target="_blank" rel="noopener">Fedora 40: Novedades y razones para usarlo</a> — YouTube.</p>
+
+          <div class="video" aria-label="The Fedora Saga">
+            <iframe src="https://www.youtube.com/embed/9SfwaDWHTZ8" title="The Fedora Saga" allowfullscreen></iframe>
+          </div>
+          <p>Video No. 2. <a href="https://www.youtube.com/watch?v=9SfwaDWHTZ8" target="_blank" rel="noopener">The Fedora Saga: Longtime Contributors Share Their Stories</a> — YouTube.</p>
+
+          <h3 id="hipervinculos">4.5 Hipervínculos relacionados</h3>
+          <ul class="links">
+            <li><a href="https://getfedora.org" target="_blank" rel="noopener">Get Fedora — Descargar</a></li>
+            <li><a href="https://docs.fedoraproject.org" target="_blank" rel="noopener">Documentación oficial</a></li>
+            <li><a href="https://fedoramagazine.org" target="_blank" rel="noopener">Fedora Magazine</a></li>
+            <li><a href="https://ask.fedoraproject.org" target="_blank" rel="noopener">Ask Fedora</a></li>
+            <li><a href="https://podman.io" target="_blank" rel="noopener">Podman</a></li>
+            <li><a href="https://flatpak.org" target="_blank" rel="noopener">Flatpak</a></li>
+            <li><a href="https://src.fedoraproject.org" target="_blank" rel="noopener">SRPMs y repositorios</a></li>
+          </ul>
+        </section>
+
+        <section id="arquitectura" class="card" aria-labelledby="arquitectura">
+          <div class="section-title"><h2>5. Arquitecturas y Componentes de Linux Fedora</h2></div>
+          <p><strong>Componentes principales de Fedora:</strong></p>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Componente</th>
+                      <th>Descripción</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>Kernel de Linux</td>
+                      <td>Núcleo que gestiona recursos, procesos y hardware. Fedora suele incluir versiones actualizadas del kernel.</td>
+                  </tr>
+                  <tr>
+                      <td>Systemd</td>
+                      <td>Sistema de inicio y administración de servicios; reemplaza al antiguo init. Controla la secuencia de arranque y supervisa procesos.</td>
+                  </tr>
+                  <tr>
+                      <td>DNF (Dandified YUM)</td>
+                      <td>Gestor de paquetes moderno de Fedora. Permite instalar, actualizar y eliminar software fácilmente.</td>
+                  </tr>
+                  <tr>
+                      <td>RPM (Red Hat Package Manager)</td>
+                      <td>Formato de paquetes utilizado por Fedora para distribuir programas y bibliotecas.</td>
+                  </tr>
+                  <tr>
+                      <td>GNOME</td>
+                      <td>Entorno de escritorio predeterminado. Ofrece una interfaz moderna y simple para el usuario.</td>
+                  </tr>
+                  <tr>
+                      <td>SELinux (Security-Enhanced Linux)</td>
+                      <td>Módulo de seguridad desarrollado por la NSA. Controla el acceso a recursos del sistema mediante políticas estrictas.</td>
+                  </tr>
+                  <tr>
+                      <td>Firewalld</td>
+                      <td>Sistema de gestión de cortafuegos que utiliza reglas dinámicas para proteger la red.</td>
+                  </tr>
+                  <tr>
+                      <td>Anaconda</td>
+                      <td>Instalador oficial de Fedora; facilita la configuración del sistema durante la instalación.</td>
+                  </tr>
+                  <tr>
+                      <td>GRUB2 (Bootloader)</td>
+                      <td>Cargador de arranque que permite seleccionar qué sistema operativo iniciar.</td>
+                  </tr>
+                  <tr>
+                      <td>Wayland/Xorg</td>
+                      <td>Servidores gráficos que gestionan la comunicación entre el hardware gráfico y el entorno de escritorio.</td>
+                  </tr>
+              </tbody>
+          </table>
+
+          <figure>
+            <img src="https://sistemasoperativoutp.weebly.com/uploads/3/1/6/6/31668913/151905841.png" alt="Fedora Workstation GNOME">
+            <figcaption>Figura No. 3. Fedora Sistema Operativo + Pristine Fedora Software Manager. Fuente: AFunCan.com (2025). Recuperado de https://sistemasoperativoutp.weebly.com/uploads/3/1/6/6/31668913/151905841.png</figcaption>
+          </figure>
+
+      
+        </section>
+
+        <section id="ventajas-arquitectura" class="card" aria-labelledby="ventajas-arquitectura">
+          <div class="section-title"><h2>5.1 Ventajas de la arquitectura Fedora</h2></div>
+          <ul>
+              <li>Actualizaciones frecuentes y seguras.</li>
+              <li>Alta compatibilidad con hardware moderno.</li>
+              <li>Ideal para desarrollo, pruebas y entornos educativos.</li>
+              <li>Gran comunidad y soporte.</li>
+              <li>Basada en tecnologías de Red Hat, lo que la hace estable y robusta.</li>
+          </ul>
+       </section>
+
+       <section id="caracteristicas" class="card" aria-labelledby="caracteristicas">
+        <div class="section-title"><h2>6. Características de Fedora Linux</h2></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Característica</th>
+                    <th>Descripción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Software libre y de código abierto</td>
+                    <td>Todo el software incluido es libre, aunque permite instalar complementos propietarios opcionalmente.</td>
+                </tr>
+                <tr>
+                    <td>Alta seguridad</td>
+                    <td>Incluye SELinux, cortafuegos (Firewalld), actualizaciones constantes y control de permisos avanzados.</td>
+                </tr>
+                <tr>
+                    <td>Actualizaciones frecuentes</td>
+                    <td>Cada versión tiene soporte de unos 13 meses, lo que garantiza software actualizado.</td>
+                </tr>
+                <tr>
+                    <td>Gestor de paquetes moderno (DNF)</td>
+                    <td>Facilita la instalación, actualización y eliminación de software con comandos simples.</td>
+                </tr>
+                <tr>
+                    <td>Entorno gráfico GNOME</td>
+                    <td>Es el entorno de escritorio predeterminado (aunque también existen ediciones con KDE, XFCE, LXQt, etc.).</td>
+                </tr>
+                <tr>
+                    <td>Estabilidad y rendimiento</td>
+                    <td>Fedora combina las últimas innovaciones con un alto nivel de estabilidad.</td>
+                </tr>
+                <tr>
+                    <td>Compatibilidad</td>
+                    <td>Funciona tanto en equipos personales como en servidores y entornos de nube.</td>
+                </tr>
+            </tbody>
+        </table>
+      </section>
+
+      <section id="ventajas-desventajas" class="card" aria-labelledby="ventajas-desventajas">
+        <div class="section-title"><h2>7. Ventajas y Desventajas de Utilizar Fedora Linux</h2></div>
+        
+        <p class="lead">A continuación, se presenta un resumen de los puntos fuertes y las limitaciones de utilizar esta distribución de Linux.</p>
+      
+        <h3>Ventajas de Fedora</h3>
+        <ul>
+          <li><strong>Sistema moderno y actualizado:</strong> Proporciona las versiones más recientes del kernel, entornos de escritorio (GNOME) y paquetes de software.</li>
+          <li><strong>Enfocado en la innovación:</strong> Actúa como banco de pruebas para tecnologías que se integrarán posteriormente en Red Hat Enterprise Linux (RHEL).</li>
+          <li><strong>Seguridad avanzada:</strong> Viene configurado con SELinux (Security-Enhanced Linux) habilitado por defecto, ofreciendo un control de acceso obligatorio (MAC).</li>
+          <li><strong>Gran comunidad de soporte:</strong> Cuenta con una comunidad activa y bien organizada que ofrece soporte y documentación extensa.</li>
+          <li><strong>Base sólida para RHEL:</strong> Es el *upstream* o base tecnológica directa para el sistema operativo empresarial Red Hat Enterprise Linux.</li>
+        </ul>
+      
+        <h3>Desventajas de Fedora</h3>
+        <ul>
+          <li><strong>Ciclo de vida corto:</strong> Las versiones tienen un soporte de aproximadamente 13 meses, lo que implica que el usuario debe planificar actualizaciones frecuentes.</li>
+          <li><strong>Curva de aprendizaje:</strong> Puede requerir conocimientos básicos a intermedios de Linux, especialmente para configuraciones de *drivers* o la gestión de paquetes avanzados.</li>
+          <li><strong>Restricciones de licencias:</strong> Algunos códecs multimedia, *drivers* propietarios y otros programas de código cerrado no vienen instalados por defecto, requiriendo configuración manual.</li>
+        </ul>
+      </section>
+
+        <section id="conclusion" class="card" aria-labelledby="conclusion">
+          <div class="section-title"><h2>8. Conclusiones</h2></div>
+          <p>Fedora Linux es una distribución que combina una filosofía comunitaria con el respaldo técnico y económico de Red Hat. Esta combinación posibilita un flujo de innovación constante, donde las propuestas de la comunidad pueden convertirse, tras su maduración, en funcionalidades de sistemas empresariales robustos como RHEL.</p>
+          <p>Las fortalezas de Fedora incluyen su rapidez para incorporar novedades tecnológicas, su ecosistema orientado a contenedores y su política de seguridad proactiva (SELinux). Para estudiantes y docentes, Fedora ofrece un entorno ideal para experimentar con tecnologías modernas —desde la administración de servicios con systemd, hasta arquitecturas basadas en contenedores y modelos de entrega inmutables como Silverblue—, favoreciendo el aprendizaje práctico en entornos controlados.</p>
+          <p>Su modelo de lanzamientos semestrales implica una responsabilidad de mantenimiento: las versiones tienen soporte limitado, por lo que en entornos productivos se recomienda planificar actualizaciones o considerar alternativas con soporte a largo plazo (LTS) si se requiere estabilidad por años. Para entornos académicos, Fedora es valioso por su documentación, comunidad activa y herramientas educativas.</p>
+          <p>Perspectiva a futuro: Fedora seguirá siendo relevante mientras conserve su capacidad de adaptación y colaboración entre comunidad y empresas. Las tendencias actuales —edge computing, IoT y despliegues nativos en la nube— encajan bien con la filosofía de Fedora, que ya ofrece ediciones orientadas a esos escenarios.</p>
+          <p>Recomendaciones prácticas para el curso:</p>
+          <ul>
+            <li>Emplear máquinas virtuales o liveUSB para prácticas y evitar modificar equipos con datos sensibles.</li>
+            <li>Incluir ejercicios prácticos con Podman y tareas sobre políticas SELinux.</li>
+            <li>Documentar la versión de Fedora usada en prácticas y trabajos.</li>
+            <li>Fomentar el uso de Silverblue para aprender sobre sistemas inmutables y OSTree.</li>
+          </ul>
+        </section>
+
+        <section id="referencias" class="card" aria-labelledby="referencias">
+          <div class="section-title"><h2>9. Referencias bibliográficas (APA)</h2></div>
+          <ol>
+            <li>Fedora Project. (2024). <em>About Fedora</em>. Recuperado de <a href="https://getfedora.org" target="_blank" rel="noopener">https://getfedora.org</a></li>
+            <li>Fedora Project. (2024). <em>Documentation</em>. Recuperado de <a href="https://docs.fedoraproject.org" target="_blank" rel="noopener">https://docs.fedoraproject.org</a></li>
+            <li>Fedora Project. (2024). <em>Videos</em>. Recuperado de <a href="https://fedoraproject.org/wiki/Videos" target="_blank" rel="noopener">https://fedoraproject.org/wiki/Videos</a></li>
+            <li>Fedora Magazine. (2022). <em>Fedora Workstation screenshot</em>. Recuperado de <a href="https://fedoramagazine.org/wp-content/uploads/2022/03/fw36-1.png" target="_blank" rel="noopener">https://fedoramagazine.org/wp-content/uploads/2022/03/fw36-1.png</a></li>
+            <li>OSXDaily. (2023). <em>Fedora on Apple hardware</em>. Recuperado de <a href="https://cdn.osxdaily.com/wp-content/uploads/2023/12/fedora-asahi-linux-mac.jpg" target="_blank" rel="noopener">https://cdn.osxdaily.com/wp-content/uploads/2023/12/fedora-asahi-linux-mac.jpg</a></li>
+            <li>Red Hat. (2023). <em>What is Fedora?</em> Recuperado de <a href="https://www.redhat.com/en/topics/linux/what-is-fedora" target="_blank" rel="noopener">https://www.redhat.com/en/topics/linux/what-is-fedora</a></li>
+            <li>DistroWatch. (2024). <em>Fedora</em>. Recuperado de <a href="https://distrowatch.com/table.php?distribution=fedora" target="_blank" rel="noopener">https://distrowatch.com/table.php?distribution=fedora</a></li>
+          </ol>
+        </section>
+
+        <section id="integrantes" class="card" aria-labelledby="integrantes">
+          <div class="section-title"><h2>10. Integrantes y datos institucionales</h2></div>
+
+          <div class="info-block" role="contentinfo">
+            <div class="institution-text">
+              <h3>UNIVERSIDAD TECNOLÓGICA DE PANAMÁ</h3>
+              <p>FACULTAD DE INGENIERÍA DE SISTEMAS COMPUTACIONALES</p>
+              <p>DEPARTAMENTO DE ARQUITECTURA Y REDES DE COMPUTADORAS</p>
+              <p style="margin-top:10px;"><strong>Profesor:</strong> ISAAC ESQUIVEL</p>
+              <p><strong>Grupo:</strong> 1IL-142</p>
+            </div>
+
+            <div style="text-align:right;">
+              <div class="logos" aria-hidden="true">
+                <img src="https://utp.ac.pa/sites/default/files/documentos/2024/imagen/6_logo_utp_-_rgb_oficial.png" alt="Logo UTP">
+                <img src="https://utp.ac.pa/sites/default/files/documentos/2024/imagen/91_logo_5_fisc_oficial_-_rgb.png" alt="Logo Facultad">
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;">
+            <div style="text-align:center;">
+              <div class="photo-placeholder" aria-hidden="true"><br>INTEGRANTE</div>
+              <img src="luis_padilla.png" alt="Foto de Luis Padilla" style="width:100px; height:100px; border-radius:50%; object-fit:cover; border: 2px solid var(--accent); margin-top:8px;">
+              <p style="margin-top:8px;">LUIS PADILLA</p>
+            </div>
+            <div style="text-align:center;">
+              <div class="photo-placeholder" aria-hidden="true"><br>INTEGRANTE</div>
+              <img src="ricardo_alvarez.jpg" alt="Foto de Ricardo Alvarez" style="width:100px; height:100px; border-radius:50%; object-fit:cover; border: 2px solid var(--accent); margin-top:8px;">
+              <p style="margin-top:8px;">RICARDO ALVAREZ</p>
+            </div>
+            <div style="text-align:center;">
+              <div class="photo-placeholder" aria-hidden="true"><br>INTEGRANTE</div>
+              <img src="rafael_batista.jpg" alt="Foto de Rafael Batista" style="width:100px; height:100px; border-radius:50%; object-fit:cover; border: 2px solid var(--accent); margin-top:8px;">
+              <p style="margin-top:8px;">RAFAEL BATISTA</p>
+            </div>
+            <div style="text-align:center;">
+              <div class="photo-placeholder" aria-hidden="true"><br>INTEGRANTE</div>
+              <img src="romulo_valiente.jpg" alt="Foto de Rómulo Valiente" style="width:100px; height:100px; border-radius:50%; object-fit:cover; border: 2px solid var(--accent); margin-top:8px;">
+              <p style="margin-top:8px;">VALIENTE ROMULO</p>
+            </div>
+          </div>
+
+        </section>
+
+      </div> <!-- content-wrap -->
+    </main>
+
+    <footer>
+      <p><strong>Trabajo entregado para:</strong> Universidad Tecnológica de Panamá — Facultad de Ingeniería de Sistemas Computacionales. Departamento de Arquitectura y Redes de Computadoras.</p>
+      <p>Versión: Entrega académica. Revise las URLs y fechas de consulta antes de la presentación.</p>
+    </footer>
+
+  </div> <!-- page -->
+</body>
+</html>
